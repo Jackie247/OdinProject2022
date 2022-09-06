@@ -17,3 +17,12 @@ function displayLibrary(){
     });
 }
 
+var Book1 = new Book("Booky","J.K");
+var Book2 = new Book("Chooky","T.K");
+var Book3 = new Book("Rooky","B.K");
+
+addBookToLibrary(Book1);
+addBookToLibrary(Book2);
+addBookToLibrary(Book3);
+
+displayLibrary();
