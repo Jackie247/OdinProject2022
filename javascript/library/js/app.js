@@ -1,30 +1,41 @@
 // Library Class
 function Library(){
-    this.books = []
+    this.books = [];
 }
 Library.prototype.addBookToLibrary = function (book){
-    // do stuff
-    this.books.push(book)
+    this.books.push(book);
 }
-Library.prototype.displayBooks = function() {
-    this.books.forEach(book => {
-        let card = document.createElement("div")
-        let title = document.createElement("h3")
-        let author = document.createElement("p")
-        let pages = document.createElement("p")
-        let readBtn = document.createElement("button")
-        let delBtn = document.createElement("button")
-    });
+Library.prototype.createBookCard = function(book) {
+        let card = document.createElement("div");
+        let title = document.createElement("h3");
+        let author = document.createElement("p");
+        let genre = document.createElement("p");
+        let pages = document.createElement("p");
+        let readBtn = document.createElement("button");
+        let delBtn = document.createElement("button");
+
+        card.appendChild(title);
+        card.appendChild(author);
+        card.appendChild(pages);
+        card.appendChild(genre);
+        card.appendChild(readBtn);
+        card.appendChild(delBtn);
+
+        bookGrid.appendChild(card)
 }
 
 Library.prototype.updateLibrary = function() {
     for (book in this.books){
-        bookGrid.appendChild(book)
+        bookGrid.appendChild(book);
     }
 }
 
 Library.prototype.deleteLibrary = function() {
-    
+    // returns a nodelist of div childs
+    booksInLibrary = document.querySelectorAll(".bookGrid")
+    for(let i = 0; i < booksInLibrary.length; i++){
+        booksInLibrary.removeChild(booksInLibrary[i]);
+    }
 }
 // Book Class
 function Book (title,author){
@@ -39,13 +50,14 @@ var book1 = new Book("Booky","J.K");
 var book2 = new Book("Chooky","T.K");
 var book3 = new Book("Rooky","B.K");
 
-library.addBookToLibrary(book1)
-library.addBookToLibrary(book2)
-library.addBookToLibrary(book3)
+library.addBookToLibrary(book1);
+library.addBookToLibrary(book2);
+library.addBookToLibrary(book3);
 
 //console.log(Book.prototype.isPrototypeOf(book1))
 
 // DOM Variables
 //let bookGrid = document.querySelector(".bookGrid");
+//let addBtn = document.querySelector(".addBookBtn")
 
 library.displayBooks();
