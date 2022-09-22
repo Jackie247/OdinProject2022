@@ -1,3 +1,9 @@
+@mixin flexCenter {
+    display:flex;
+    flex-flow:row;
+    justify-content: center;
+    align-items: center;
+}
 /* css reset */
 *{
     box-sizing:border-box;
@@ -14,20 +20,15 @@ li{
     --secondary: #e2e8f0;
 }
 .header{
-    display:flex;
-    flex-flow:row;    
+    @include flexCenter();
     background-color:var(--primary);
-    a{
-        text-decoration: none;
-    }
+    padding:1em;
 }
 .bookGrid{
     background-color:var(--secondary);
 }
 .footer{
-    display:flex;
-    flex-flow:row;    
-    justify-content: center;
+    @include flexCenter();
 }
 /* mobile styles */
 
