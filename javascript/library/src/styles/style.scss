@@ -30,13 +30,15 @@ li{
 header{
     @include flexCenterRow();
     background-color:var(--headerBg);
-    padding:1em;
-    margin-bottom:1em;
+    padding-bottom:1em;
     h1{
+        font-weight: bold;
         color:#fff;
     }
 }
 main{
+    padding: 1em 0;
+    background-color:var(--mainBg);
     .addBookBtn{
         @include flexCenterRow();
         button{
@@ -45,7 +47,7 @@ main{
             border:none;
             border-radius:1em;
             height:2em;
-            width:10em;
+            width:8em;
         }
     }
     .bookGrid{
@@ -54,18 +56,15 @@ main{
 }
 
 .footer{
-    height:50%;
     @include flexCenterRow();
+    height:65%;
+    color:#fff;
+    background-color:var(--headerBg);
+    font-weight: bold;
+    align-items:center;
     p{
         margin:0 1em;
     }
-    .footer-icons{
-        a{
-            display:flex;
-            align-items: center;
-        }
-    }
-
 }
 /* mobile styles */
 
