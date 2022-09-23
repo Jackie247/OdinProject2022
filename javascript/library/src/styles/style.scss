@@ -13,9 +13,9 @@
 }
 body{
     display:grid;
-    grid-template-rows: 100px 1fr 75px;
+    grid-template-rows: 75px 1fr 50px;
     grid-template-columns: 1fr;
-    min-height:90vh;
+    min-height:100vh;
     justify-content: space-between;
 }
 li{
@@ -24,13 +24,13 @@ li{
 /* base styles */
 :root{
     --headerBg: #38bdf8;
-    --mainBg: #e2e8f0;
+    --mainBg: #fafaf9;
     --buttonBg:#38bdf8;
 }
 header{
     @include flexCenterRow();
     background-color:var(--headerBg);
-    padding-bottom:1em;
+    box-shadow: 1px 1px 1px 1px var(--mainBg);
     h1{
         font-weight: bold;
         color:#fff;
@@ -39,8 +39,12 @@ header{
 main{
     padding: 1em 0;
     background-color:var(--mainBg);
+    transition: height .4s ease-in-out;
+    -webkit-transition: height .4s ease-in-out;
+    -moz-transition: height .4s ease-in-out;
     .addBookBtn{
-        @include flexCenterRow();
+        display:flex;
+        justify-content: center;
         button{
             color:#fff;
             background-color: var(--buttonBg);
@@ -48,7 +52,8 @@ main{
             border-radius:1em;
             height:2em;
             width:8em;
-        }
+            font-weight: bold;
+        }    height:100%;
     }
     .bookGrid{
         background-color:var(--mainBg);
@@ -57,7 +62,6 @@ main{
 
 .footer{
     @include flexCenterRow();
-    height:65%;
     color:#fff;
     background-color:var(--headerBg);
     font-weight: bold;
