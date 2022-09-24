@@ -5,6 +5,9 @@ function Library(){
 Library.prototype.addBookToLibrary = function (book){
     this.books.push(book);
 }
+Library.prototype.displayForm = function(book){
+
+}
 Library.prototype.createBookCard = function(book) {
         let card = document.createElement("div");
         let title = document.createElement("h3");
@@ -58,6 +61,8 @@ library.addBookToLibrary(book3);
 
 // DOM Variables
 //let bookGrid = document.querySelector(".bookGrid");
-//let addBtn = document.querySelector(".addBookBtn")
-
+//let addBookBtn = document.querySelector(".addBookBtn")
+addBookBtn.addEventListener('click',() =>{
+    let form = document.getElementById('form')
+})
 library.displayBooks();
