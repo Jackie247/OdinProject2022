@@ -75,8 +75,12 @@ main{
             height:100%;
             padding:1em;
             border-radius:1em;
+            color:#fff;
+            h3{
+                @include flexCenterRow();
+                text-transform: uppercase;
+            }
             label{
-                color:#fff;
                 font-weight: bold;
                 text-transform: uppercase;
                 margin:5px;
@@ -90,6 +94,8 @@ main{
                 outline:none;
             }
             .form-checklist{
+                position:relative;
+                left:25%;
                 input:hover{
                     cursor: pointer;
                 }
