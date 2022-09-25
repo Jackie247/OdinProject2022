@@ -29,18 +29,24 @@
         <div class="bookGrid"></div>
         <form id="book-form" autocomplete="off">
             <div class="form-input">
-                <h3>Add a new book</h3>
-                <input type="text" id="title" placeholder="TITLE">
-                <br>
-                <input type="text" id="author" placeholder="AUTHOR">
-                <br>
-                <input type="number" id="pages" placeholder="PAGES">
-                <br>
-                <div class="form-checklist">
-                    <input type="checkbox" id="readCheckbox" label="Already read">
-                    <label for="readCheckbox">Already Read</label>
+                <div class="form-title">
+                    <h3>Add a new book</h3>
                 </div>
-                <button>Submit</button>
+                <div class="input-fields">
+                    <input type="text" id="title" placeholder="TITLE">
+                    <br>
+                    <input type="text" id="author" placeholder="AUTHOR">
+                    <br>
+                    <input type="number" id="pages" placeholder="PAGES">
+                    <br>
+                </div>
+                <div class="form-checklist">
+                    <label for="readCheckbox">Book Completed</label>
+                    <input type="checkbox" id="readCheckbox" label="Already read">
+                </div>
+                <div class="submit-btn">
+                    <button>Submit</button>
+                </div>
             </div>
 
         </form>
