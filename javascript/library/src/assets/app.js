@@ -1,3 +1,12 @@
+// DOM Variables
+let bookGrid = document.querySelector(".bookGrid");
+let addBookBtn = document.getElementById("addBookBtn");
+let form = document.getElementById('book-form');
+let title = document.getElementById('title');
+let author = document.getElementById('author');
+let pages = document.getElementById('pages');
+let formCancelBtn = document.getElementById('cancelBtn')
+let formSubmitBtn = document.getElementById('submitBtn')
 // Library Class
 function Library(){
     this.books = [];
@@ -5,11 +14,10 @@ function Library(){
 Library.prototype.addBookToLibrary = function (book){
     this.books.push(book);
 }
-Library.prototype.createBookCard = function(book) {
+Library.prototype.createBookCard = function() {
         let card = document.createElement("div");
         let title = document.createElement("h3");
         let author = document.createElement("p");
-        let genre = document.createElement("p");
         let pages = document.createElement("p");
         let readBtn = document.createElement("button");
         let delBtn = document.createElement("button");
@@ -38,10 +46,11 @@ Library.prototype.deleteLibrary = function() {
     }
 }
 // Book Class
-function Book (title,author){
+function Book (title,author,pages){
     // constructor
     this.title = title;
     this.author = author;
+    this.pages = pages;
 }
 // Library object creation
 var library = new Library();
@@ -53,15 +62,6 @@ var book3 = new Book("Rooky","B.K");
 library.addBookToLibrary(book1);
 library.addBookToLibrary(book2);
 library.addBookToLibrary(book3);
-
-//console.log(Book.prototype.isPrototypeOf(book1))
-
-// DOM Variables
-let bookGrid = document.querySelector(".bookGrid");
-let addBookBtn = document.getElementById("addBookBtn");
-let form = document.getElementById('book-form');
-let formCancelBtn = document.getElementById('cancelBtn')
-let formSubmitBtn = document.getElementById('submitBtn')
 
 // Display form when add book button is clicked
 addBookBtn.addEventListener('click',() =>{
@@ -78,4 +78,8 @@ formCancelBtn.addEventListener('click', () => {
         form.style.display = "none"
     }
     return;
+})
+
+formSubmitBtn.addEventListener('click', () => {
+    library.createBookCard();
 })
