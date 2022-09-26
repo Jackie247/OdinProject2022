@@ -37,7 +37,7 @@ header{
 }
 main{
     display:grid;
-    grid-template-rows: 1em, 1fr;
+    grid-template-rows: 50px 1fr;
     grid-template-columns: 1fr;
     padding: 1em 0;
     background-color:var(--primary);
@@ -54,7 +54,7 @@ main{
             height:2em;
             width:8em;
             font-weight: bold;
-        }    height:100%;
+        }    
     }
     .bookGrid{
         background-color:var(--primary);
@@ -65,7 +65,7 @@ main{
         top:20%;
         left:50%;
         transform: translateX(-50%);
-        height:50vh;
+        height:auto;
         width:85vw;
         .form-input{
             display:flex;
@@ -143,13 +143,51 @@ main{
 
 /* small tablet styles */
 @media screen and (min-width:620px){
-
+    body{
+        display:grid;
+        grid-template-rows: 100px 1fr 75px;
+        grid-template-columns: 1fr;
+        min-height:100vh;
+        justify-content: space-between;
+    }
+    main{
+        grid-template-rows: 100px 1fr;
+        .addBookBtn{
+            margin: 1em auto;
+            font-size:25px;
+            button{
+                color:#fff;
+                background-color: var(--secondary);
+                border:none;
+                border-radius:1em;
+                height:2em;
+                width:8em;
+                font-weight: bold;
+            }  
+        }
+        #book-form{
+            top:25%;
+            width:65vw;
+        }
+    }
 }
 /* large tablet and laptops */
 @media screen and (min-width:960px){
-    
+    main{
+        grid-template-rows: 100px 1fr;
+        #book-form{
+            top:25%;
+            width:40vw;
+        }
+    }
 }
 /* desktop styles */
 @media screen and (min-width:1200px){
-    
+    main{
+        grid-template-rows: 100px 1fr;
+        #book-form{
+            top:25%;
+            width:25vw;
+        }
+    }
 }
