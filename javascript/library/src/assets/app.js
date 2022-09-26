@@ -62,16 +62,18 @@ let addBookBtn = document.getElementById("addBookBtn");
 let form = document.getElementById('book-form');
 let formCancelBtn = document.getElementById('cancelBtn')
 let formSubmitBtn = document.getElementById('submitBtn')
+
+// Display form when add book button is clicked
 addBookBtn.addEventListener('click',() =>{
-    console.log("1");
+    console.log("show display");
     if (form.style.display = "none"){
         form.style.display = "block";
     }
     return;
 });
-
+// Hide form if form is displayed.
 formCancelBtn.addEventListener('click', () => {
-    console.log("2");
+    console.log("hide display");
     if(form.style.display = "block"){
         form.style.display = "none"
     }
