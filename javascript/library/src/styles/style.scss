@@ -44,7 +44,7 @@ main{
     transition: height .4s ease-in-out;
     -webkit-transition: height .4s ease-in-out;
     -moz-transition: height .4s ease-in-out;
-    .addBookBtn{
+    .add-book-btn-container{
         margin: 0 auto;
         button{
             color:#fff;
@@ -60,7 +60,7 @@ main{
         background-color:var(--primary);
     }
     #book-form{
-        //display:none;
+        display:none;
         position:absolute;
         top:20%;
         left:50%;
@@ -152,7 +152,7 @@ main{
     }
     main{
         grid-template-rows: 100px 1fr;
-        .addBookBtn{
+        .add-book-btn-container{
             margin: 1em auto;
             font-size:25px;
             button{

@@ -5,9 +5,6 @@ function Library(){
 Library.prototype.addBookToLibrary = function (book){
     this.books.push(book);
 }
-Library.prototype.displayForm = function(book){
-
-}
 Library.prototype.createBookCard = function(book) {
         let card = document.createElement("div");
         let title = document.createElement("h3");
@@ -60,9 +57,13 @@ library.addBookToLibrary(book3);
 //console.log(Book.prototype.isPrototypeOf(book1))
 
 // DOM Variables
-//let bookGrid = document.querySelector(".bookGrid");
-//let addBookBtn = document.querySelector(".addBookBtn")
+let bookGrid = document.querySelector(".bookGrid");
+let addBookBtn = document.getElementById("addBookBtn");
+let form = document.getElementById('book-form');
 addBookBtn.addEventListener('click',() =>{
-    let form = document.getElementById('form')
-})
-library.displayBooks();
+    console.log("1");
+    if (form.style.display = "none"){
+        form.style.display = "block";
+    }
+    return;
+});
