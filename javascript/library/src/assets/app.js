@@ -60,6 +60,8 @@ library.addBookToLibrary(book3);
 let bookGrid = document.querySelector(".bookGrid");
 let addBookBtn = document.getElementById("addBookBtn");
 let form = document.getElementById('book-form');
+let formCancelBtn = document.getElementById('cancelBtn')
+let formSubmitBtn = document.getElementById('submitBtn')
 addBookBtn.addEventListener('click',() =>{
     console.log("1");
     if (form.style.display = "none"){
@@ -67,3 +69,11 @@ addBookBtn.addEventListener('click',() =>{
     }
     return;
 });
+
+formCancelBtn.addEventListener('click', () => {
+    console.log("2");
+    if(form.style.display = "block"){
+        form.style.display = "none"
+    }
+    return;
+})
