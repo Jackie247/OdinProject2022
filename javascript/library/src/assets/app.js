@@ -2,9 +2,6 @@
 let bookGrid = document.getElementById(".bookGrid");
 let addBookBtn = document.getElementById("addBookBtn");
 let form = document.getElementById('book-form');
-let title = document.getElementById('title').textContent;
-let author = document.getElementById('author').textContent;
-let pages = document.getElementById('pages').textContent;
 let formCancelBtn = document.getElementById('cancelBtn')
 let formSubmitBtn = document.getElementById('submitBtn')
 // Library Class
@@ -15,22 +12,16 @@ function Library(){
 Library.prototype.addBookToLibrary = function (book){
     this.booksArray.push(book);
 }
-Library.prototype.createBookCard = function() {
-    // Book oject creation
-    var book = new Book(title,author,pages);
+Library.prototype.createBook = function() {
     // Create the card elements
     let card = document.createElement("div");
     let title = document.createElement("h3");
     let author = document.createElement("p");
     let pages = document.createElement("p");
-    //let readBtn = document.createElement("button");
-    //let delBtn = document.createElement("button");
     // Append book text to card div
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);
-    //card.appendChild(readBtn);
-    //ard.appendChild(delBtn);
     // set text content to book object fields
     title.textContent = book.title;
     author.textContent = book.author;
@@ -81,8 +72,11 @@ formCancelBtn.addEventListener('click', () => {
 
 formSubmitBtn.addEventListener('click', () => {
     console.log("success");
-
-    var bookCard = library.createBookCard(book);
-    library.addBookToLibrary(bookCard);
-    library.updateLibrary();
+    let title = document.getElementById('title').textContent;
+    let author = document.getElementById('author').textContent;
+    let pages = document.getElementById('pages').textContent;
+    // Book oject creation
+    var book = new Book(title,author,pages);
+    // Push object to library 
+    library.addBookToLibrary(book);
 })
