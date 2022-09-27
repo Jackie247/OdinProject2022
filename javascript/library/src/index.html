@@ -26,7 +26,13 @@
         <div class="add-book-btn-container">
             <button id="addBookBtn">+ Add Book</button>
         </div>
-        <div class="bookGrid"></div>
+        <div id="bookGrid" class="bookGrid">
+            <div>
+                <h3>Test</h3>
+                <p>author</p>
+                <p>pages</p>
+            </div>
+        </div>
         <form id="book-form" autocomplete="off">
             <div class="form-input focused" >
                 <div class="form-title">
@@ -45,8 +51,8 @@
                     <input type="checkbox" id="readCheckbox" label="Already read">
                 </div>
                 <div class="btn-container">
-                    <button id="cancelBtn" class="cancelBtn">Cancel</button>
-                    <button id="submitBtn" class="submitBtn">Submit</button>
+                    <button type="button" id="cancelBtn" class="cancelBtn">Cancel</button>
+                    <button type="button" id="submitBtn" class="submitBtn">Submit</button>
                 </div>
             </div>
         </form>

@@ -1,39 +1,46 @@
 // DOM Variables
-let bookGrid = document.querySelector(".bookGrid");
+let bookGrid = document.getElementById(".bookGrid");
 let addBookBtn = document.getElementById("addBookBtn");
 let form = document.getElementById('book-form');
-let title = document.getElementById('title');
-let author = document.getElementById('author');
-let pages = document.getElementById('pages');
+let title = document.getElementById('title').textContent;
+let author = document.getElementById('author').textContent;
+let pages = document.getElementById('pages').textContent;
 let formCancelBtn = document.getElementById('cancelBtn')
 let formSubmitBtn = document.getElementById('submitBtn')
 // Library Class
 function Library(){
-    this.books = [];
+    // array of book objects
+    this.booksArray = [];
 }
 Library.prototype.addBookToLibrary = function (book){
-    this.books.push(book);
+    this.booksArray.push(book);
 }
 Library.prototype.createBookCard = function() {
-        let card = document.createElement("div");
-        let title = document.createElement("h3");
-        let author = document.createElement("p");
-        let pages = document.createElement("p");
-        let readBtn = document.createElement("button");
-        let delBtn = document.createElement("button");
-
-        card.appendChild(title);
-        card.appendChild(author);
-        card.appendChild(pages);
-        card.appendChild(genre);
-        card.appendChild(readBtn);
-        card.appendChild(delBtn);
-
-        bookGrid.appendChild(card)
+    // Book oject creation
+    var book = new Book(title,author,pages);
+    // Create the card elements
+    let card = document.createElement("div");
+    let title = document.createElement("h3");
+    let author = document.createElement("p");
+    let pages = document.createElement("p");
+    //let readBtn = document.createElement("button");
+    //let delBtn = document.createElement("button");
+    // Append book text to card div
+    card.appendChild(title);
+    card.appendChild(author);
+    card.appendChild(pages);
+    //card.appendChild(readBtn);
+    //ard.appendChild(delBtn);
+    // set text content to book object fields
+    title.textContent = book.title;
+    author.textContent = book.author;
+    pages.textContent = book.pages;
+    // Add created card to book array
+    this.booksArray.push(card);
 }
 
 Library.prototype.updateLibrary = function() {
-    for (book in this.books){
+    for (book in this.booksArray){
         bookGrid.appendChild(book);
     }
 }
@@ -54,14 +61,6 @@ function Book (title,author,pages){
 }
 // Library object creation
 var library = new Library();
-// Book oject creation
-var book1 = new Book("Booky","J.K");
-var book2 = new Book("Chooky","T.K");
-var book3 = new Book("Rooky","B.K");
-
-library.addBookToLibrary(book1);
-library.addBookToLibrary(book2);
-library.addBookToLibrary(book3);
 
 // Display form when add book button is clicked
 addBookBtn.addEventListener('click',() =>{
@@ -81,5 +80,9 @@ formCancelBtn.addEventListener('click', () => {
 })
 
 formSubmitBtn.addEventListener('click', () => {
-    library.createBookCard();
+    console.log("success");
+
+    var bookCard = library.createBookCard(book);
+    library.addBookToLibrary(bookCard);
+    library.updateLibrary();
 })
