@@ -19,19 +19,19 @@
     font-family:'Noto Sans','Times New Roman', Times, sans-serif;
 }
 body{
-    display:grid;
-    grid-template-rows: 75px 1fr 50px;
-    grid-template-columns: 1fr;
     min-height:100vh;
-    justify-content: space-between;
+    background-color:var(--primary);
 }
 li{
     list-style-type: none;
 }
+button{
+    background-color: #fff;
+}
 /* base styles */
 :root{
-    --secondary: #334155;
     --primary: #f1f5f9;
+    --secondary: #334155;
 }
 header{
     @include flexCenterRow();
@@ -43,19 +43,15 @@ header{
     }
 }
 main{
-    display:grid;
-    grid-template-rows: 50px 1fr;
-    grid-template-columns: 1fr;
+    height:100%;
     padding: 1em 0;
-    background-color:var(--primary);
     transition: height .4s ease-in-out;
     -webkit-transition: height .4s ease-in-out;
     -moz-transition: height .4s ease-in-out;
     .add-book-btn-container{
+        @include flexCenterRow();
         margin: 0 auto;
         button{
-            color:#fff;
-            background-color: var(--secondary);
             border:none;
             border-radius:1em;
             height:2em;
@@ -64,9 +60,11 @@ main{
         }    
     }
     .bookGrid{
-        display:flex;
-        flex-flow: row wrap;
-        background-color:var(--primary);
+        display:grid;
+        margin-top:20px;
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        gap:30px;
+
     }
     .focused{
         box-shadow: 5px 2px 2px 9999px #000000b0;
@@ -142,9 +140,19 @@ main{
     }
 }
 .bookCard{
+    display:flex;
+    flex-flow:column;
+    align-items: center;
+    padding:20px;
+    margin: 0 20px;
+    background-color:#94a3b8;
+    border-radius:1em;
 
 }
 .footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
     @include flexCenterRow();
     color:#fff;
     background-color:var(--secondary);
@@ -171,8 +179,6 @@ main{
             margin: 1em auto;
             font-size:25px;
             button{
-                color:#fff;
-                background-color: var(--secondary);
                 border:none;
                 border-radius:1em;
                 height:2em;
