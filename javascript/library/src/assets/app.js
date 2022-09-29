@@ -31,7 +31,7 @@ Library.prototype.addBookToGrid = function(book) {
     let read = document.createElement("button");
     let remove = document.createElement("button");
     if(book.read){
-        read.textContent = 'Completed';
+        read.textContent = 'Finished';
         read.classList.add("read");
     }
     else{
