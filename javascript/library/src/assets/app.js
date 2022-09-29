@@ -106,6 +106,9 @@ formSubmitBtn.addEventListener('click', () => {
     if(titleVal === '' || authorVal === '' || pagesVal === '' || readVal === ''){
         return false;
     }
+    else if(pagesVal > 9999 || pagesVal < 1){
+        return false;
+    }
     else{
         var book = new Book(titleVal,authorVal,pagesVal,readVal);
         library.addBookToLibrary(book);
