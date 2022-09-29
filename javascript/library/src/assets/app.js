@@ -90,9 +90,13 @@ formCancelBtn.addEventListener('click', () => {
 })
 
 formSubmitBtn.addEventListener('click', () => {
-    console.log("create book");
+    let [titleVal,authorVal,pagesVal,readVal] = [title.value,author.value,pages.value,read.checked];
     // Book oject creation
-    var book = new Book(title.value,author.value,pages.value,read.checked);
-    // Push object to library 
-    library.addBookToLibrary(book);
+    if(titleVal === '' || authorVal === '' || pagesVal === '' || readVal === ''){
+        return false;
+    }
+    else{
+        var book = new Book(titleVal,authorVal,pagesVal,readVal);
+        library.addBookToLibrary(book);
+    }
 })

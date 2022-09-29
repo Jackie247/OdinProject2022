@@ -44,11 +44,11 @@
                     <h3>Add a new book</h3>
                 </div>
                 <div class="input-fields">
-                    <input type="text" id="title" placeholder="TITLE" name="title">
+                    <input type="text" id="title" placeholder="TITLE" name="title" maxlength="100" required>
                     <br>
-                    <input type="text" id="author" placeholder="AUTHOR" name="author">
+                    <input type="text" id="author" placeholder="AUTHOR" name="author" maxlength="100" required>
                     <br>
-                    <input type="number" id="pages" placeholder="PAGES" name="pages">
+                    <input type="number" id="pages" placeholder="PAGES" name="pages" maxlength="9999" required>
                     <br>
                 </div>
                 <div id="form-checklist" class="form-checklist">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="btn-container">
                     <button type="button" id="cancelBtn" class="cancelBtn">Cancel</button>
-                    <button type="button" id="submitBtn" class="submitBtn">Submit</button>
+                    <button type="submit" id="submitBtn" class="submitBtn">Submit</button>
                 </div>
             </div>
         </form>
