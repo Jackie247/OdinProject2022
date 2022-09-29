@@ -2,8 +2,12 @@
 let bookGrid = document.getElementById("bookGrid");
 let addBookBtn = document.getElementById("addBookBtn");
 let form = document.getElementById('book-form');
-let formCancelBtn = document.getElementById('cancelBtn')
-let formSubmitBtn = document.getElementById('submitBtn')
+let formCancelBtn = document.getElementById('cancelBtn');
+let formSubmitBtn = document.getElementById('submitBtn');
+let title = document.querySelector('[name="title"]').value;
+let author = document.querySelector('[name="author"]').value;
+let pages = document.querySelector('[name="pages"]').value;
+let read = document.getElementById('readCheckbox').checked;
 // Library Class
 function Library(){
     // array of book objects
@@ -24,14 +28,23 @@ Library.prototype.addBooksToGrid = function() {
         let title = document.createElement("h3");
         let author = document.createElement("p");
         let pages = document.createElement("p");
+        let read = document.createElement("button");
+        let remove = document.createElement("button");
+        if(book.read){
+            read.textContent = 'Completed';
+        }
+        // Add classes to elements
+        card.classList.add("bookCard");
         // Update text content for elements
         title.textContent = book.title;
         author.textContent = book.author;
-        pages.textContent = book.pages;
+        pages.textContent = `${book.pages} pages`;
+        remove.textContent = 'Delete';
         // Append book text to card div
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
+        card.appendChild(read);
         // Add created card to book grid
         bookGrid.appendChild(card);
     }
@@ -50,11 +63,12 @@ Library.prototype.deleteLibrary = function() {
     }
 }
 // Book Class
-function Book (title,author,pages){
+function Book (title,author,pages,read){
     // constructor
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.read = read;
 }
 Book.prototype.getTitle = function(){return this.title;}
 Book.prototype.getAuthor = function(){return this.author;}
@@ -81,14 +95,10 @@ formCancelBtn.addEventListener('click', () => {
 
 formSubmitBtn.addEventListener('click', () => {
     console.log("success");
-    let title = document.querySelector('[name="title"]').value;
-    let author = document.querySelector('[name="author"]').value;
-    let pages = document.querySelector('[name="pages"]').value;
-    console.log(title);
-    console.log(typeof title);
     // Book oject creation
-    var book = new Book(title,author,pages);
+    var book = new Book(title,author,pages,read);
     // Push object to library 
     library.addBookToLibrary(book);
-    library.addBooksToGrid();
+    library.addBooksToGrid();  
+    form.reset();
 })
