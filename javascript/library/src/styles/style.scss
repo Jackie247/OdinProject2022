@@ -11,6 +11,15 @@
     border-radius:0.5em;
     width:50%;
 }
+@mixin cardButtonStyle{
+    height:2.5em;
+    font-size:18px;
+    border:none;
+    border-radius:0.5em;
+    width:100%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 /* css reset */
 *{
     box-sizing:border-box;
@@ -31,6 +40,8 @@ button{
 :root{
     --primary: #f1f5f9;
     --secondary: #334155;
+    --btnUnread: #94a3b8;
+    --btnRead:#7dd89e;
 }
 header{
     @include flexCenterRow();
@@ -144,16 +155,31 @@ main{
     align-items: center;
     padding:20px;
     margin: 0 20px;
-    background-color:#94a3b8;
     border-radius:1em;
+    background-color:var(--secondary);
+    color:#fff;
     h3,p{
         font-weight: bold;
         text-transform: capitalize;
     }
-    button{
-        @include flexCenterRow();
-        @include formButtonStyle();
-        background-color:#4ade80;
+    .card-btn-container{
+        display:flex;
+        flex-flow: column;
+        width:100%;
+        .read{
+            @include cardButtonStyle();
+            background-color:#4ade80;
+
+        }
+        .not-read{
+            @include cardButtonStyle();
+            background-color:#ef4444;
+        }
+        .remove{
+            margin-top:20px;
+            @include cardButtonStyle();
+            background-color:#fff;
+        }
     }
 }
 .footer{
@@ -182,7 +208,7 @@ main{
     }
     main{
         grid-template-rows: 100px 1fr;
-        .add-book-btn-container{
+        .form-btn-container{
             margin: 1em auto;
             font-size:25px;
             button{

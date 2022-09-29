@@ -31,11 +31,10 @@
                 <h3>Test</h3>
                 <p>author</p>
                 <p>pages</p>
-            </div>
-            <div class="bookCard">
-                <h3>Test</h3>
-                <p>author</p>
-                <p>pages</p>
+                <div class="card-btn-container">
+                    <button class="read">Completed</button>
+                    <button class="remove">Delete</button>
+                </div>
             </div>
         </div>
         <form id="book-form" autocomplete="off">
@@ -48,7 +47,7 @@
                     <br>
                     <input type="text" id="author" placeholder="AUTHOR" name="author" maxlength="100" required>
                     <br>
-                    <input type="number" id="pages" placeholder="PAGES" name="pages" maxlength="9999" required>
+                    <input type="number" id="pages" placeholder="PAGES" name="pages" min="1" max="9999" required>
                     <br>
                 </div>
                 <div id="form-checklist" class="form-checklist">

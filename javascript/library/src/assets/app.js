@@ -27,24 +27,35 @@ Library.prototype.addBookToGrid = function(book) {
     let title = document.createElement("h3");
     let author = document.createElement("p");
     let pages = document.createElement("p");
+    let btnContainer = document.createElement("div");
     let read = document.createElement("button");
     let remove = document.createElement("button");
     if(book.read){
         read.textContent = 'Completed';
+        read.classList.add("read");
+    }
+    else{
+        read.textContent = 'Unfinished'
+        read.classList.add("not-read")
     }
     // Add classes to elements
     card.classList.add("bookCard");
+    btnContainer.classList.add("card-btn-container")
+    remove.classList.add("remove");
     // Update text content for elements
     title.textContent = book.title;
     author.textContent = book.author;
     pages.textContent = `${book.pages} pages`;
     remove.textContent = 'Delete';
+    // Append buttons to btn div
+    btnContainer.appendChild(read);
+    btnContainer.appendChild(remove);
     // Append book text to card div
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);
-    card.appendChild(read);
-
+    card.appendChild(btnContainer);
+    
     bookGrid.appendChild(card);
     form.reset();
 }
@@ -98,5 +109,6 @@ formSubmitBtn.addEventListener('click', () => {
     else{
         var book = new Book(titleVal,authorVal,pagesVal,readVal);
         library.addBookToLibrary(book);
+        return true;
     }
 })
