@@ -20,10 +20,7 @@ Library.prototype.addBookToLibrary = function (book){
     }
 }
 Library.prototype.removeBookFromLibrary = function(book){
-    if(this.isInLibrary(book)){
-        bookIndex = this.booksArray.findIndex(bookInArray => bookInArray === book.title);
-        this.booksArray.splice(bookIndex, bookIndex >= 0 ? 1 : 0);
-    }
+    this.booksArray.splice(this.booksArray.findIndex(bookInArray => bookInArray.title === book.title),1);
 }
 Library.prototype.addBookToGrid = function(book) {
     console.log(book);
@@ -57,8 +54,8 @@ Library.prototype.addBookToGrid = function(book) {
         }
     })
     remove.addEventListener('click',()=>{
-        bookGrid.removeChild(card);
         this.removeBookFromLibrary(book);
+        bookGrid.removeChild(card);
     })
     // Add classes to elements
     card.classList.add("bookCard");
@@ -86,13 +83,6 @@ Library.prototype.isInLibrary = function(book){
         return true;
     }
     return false;
-}
-Library.prototype.deleteLibrary = function() {
-    // returns a nodelist of div childs
-    booksInLibrary = document.querySelectorAll(".bookGrid")
-    for(let i = 0; i < booksInLibrary.length; i++){
-        booksInLibrary.removeChild(booksInLibrary[i]);
-    }
 }
 // Book Class
 function Book (title,author,pages,read){
