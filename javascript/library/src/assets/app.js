@@ -142,19 +142,3 @@ formSubmitBtn.addEventListener('click', (e) => {
         }
     }
 })
-
-let changeReadBtn = function(){
-    let bookStatus = document.getElementById('book-status');
-    bookStatus.addEventListener('click',()=>{
-        if(bookStatus.classList.contains("read")){
-            bookStatus.classList.remove("read");
-            bookStatus.classList.add("not-read");
-            bookStatus.textContent = 'Unfinished'
-        }
-        else if(bookStatus.classList.contains("not-read")){
-            bookStatus.classList.remove("not-read");
-            bookStatus.classList.add("read");
-            bookStatus.textContent = 'Finished';
-        }
-    })
-}
