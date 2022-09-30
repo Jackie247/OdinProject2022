@@ -27,15 +27,6 @@
             <button id="addBookBtn">+ Add Book</button>
         </div>
         <div id="bookGrid" class="bookGrid">
-            <div class="bookCard">
-                <h3>Test</h3>
-                <p>author</p>
-                <p>pages</p>
-                <div class="card-btn-container">
-                    <button class="read">Completed</button>
-                    <button class="remove">Delete</button>
-                </div>
-            </div>
         </div>
         <form id="book-form" autocomplete="off">
             <div class="form-input focused" >
@@ -56,7 +47,7 @@
                 </div>
                 <div class="btn-container">
                     <button type="button" id="cancelBtn" class="cancelBtn">Cancel</button>
-                    <button type="submit" id="submitBtn" class="submitBtn">Submit</button>
+                    <button onsubmit="return false" type="submit" id="submitBtn" class="submitBtn">Submit</button>
                 </div>
             </div>
         </form>

@@ -122,19 +122,24 @@ formCancelBtn.addEventListener('click', () => {
     return;
 })
 
-formSubmitBtn.addEventListener('click', () => {
+formSubmitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     let [titleVal,authorVal,pagesVal,readVal] = [title.value,author.value,pages.value,read.checked];
     // Book oject creation
     if(titleVal === '' || authorVal === '' || pagesVal === '' || readVal === ''){
-        return false;
+        return;
     }
     else if(pagesVal > 9999 || pagesVal < 1){
-        return false;
+        return;
     }
     else{
         var book = new Book(titleVal,authorVal,pagesVal,readVal);
-        library.addBookToLibrary(book);
-        return true;
+        if(library.isInLibrary(book)){
+            alert("Book already exists!");
+        }
+        else{
+            library.addBookToLibrary(book);
+        }
     }
 })
 
