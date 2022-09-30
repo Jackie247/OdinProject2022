@@ -19,6 +19,12 @@ Library.prototype.addBookToLibrary = function (book){
         this.addBookToGrid(book);
     }
 }
+Library.prototype.removeBookFromLibrary = function(book){
+    if(this.isInLibrary(book)){
+        bookIndex = this.booksArray.findIndex(bookInArray => bookInArray === book.title);
+        this.booksArray.splice(bookIndex, bookIndex >= 0 ? 1 : 0);
+    }
+}
 Library.prototype.addBookToGrid = function(book) {
     console.log(book);
     console.log(book.title);
@@ -49,6 +55,10 @@ Library.prototype.addBookToGrid = function(book) {
             read.classList.add("read");
             read.textContent = 'Finished';
         }
+    })
+    remove.addEventListener('click',()=>{
+        bookGrid.removeChild(card);
+        this.removeBookFromLibrary(book);
     })
     // Add classes to elements
     card.classList.add("bookCard");
