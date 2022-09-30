@@ -71,7 +71,8 @@ main{
     }
     .bookGrid{
         display:grid;
-        margin:20px 0px;
+        margin-top:20px;
+        margin-bottom:40px;
         grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
         gap:30px;
 
@@ -195,8 +196,6 @@ main{
         margin:0 1em;
     }
 }
-/* mobile styles */
-
 /* small tablet styles */
 @media screen and (min-width:620px){
     body{
