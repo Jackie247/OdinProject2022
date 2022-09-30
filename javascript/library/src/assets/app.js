@@ -38,6 +38,18 @@ Library.prototype.addBookToGrid = function(book) {
         read.textContent = 'Unfinished'
         read.classList.add("not-read")
     }
+    read.addEventListener('click',()=>{
+        if(read.classList.contains("read")){
+            read.classList.remove("read");
+            read.classList.add("not-read");
+            read.textContent = 'Unfinished'
+        }
+        else if(read.classList.contains("not-read")){
+            read.classList.remove("not-read");
+            read.classList.add("read");
+            read.textContent = 'Finished';
+        }
+    })
     // Add classes to elements
     card.classList.add("bookCard");
     btnContainer.classList.add("card-btn-container")
@@ -115,3 +127,19 @@ formSubmitBtn.addEventListener('click', () => {
         return true;
     }
 })
+
+let changeReadBtn = function(){
+    let bookStatus = document.getElementById('book-status');
+    bookStatus.addEventListener('click',()=>{
+        if(bookStatus.classList.contains("read")){
+            bookStatus.classList.remove("read");
+            bookStatus.classList.add("not-read");
+            bookStatus.textContent = 'Unfinished'
+        }
+        else if(bookStatus.classList.contains("not-read")){
+            bookStatus.classList.remove("not-read");
+            bookStatus.classList.add("read");
+            bookStatus.textContent = 'Finished';
+        }
+    })
+}
