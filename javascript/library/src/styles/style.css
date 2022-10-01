@@ -1,0 +1,307 @@
+/* css reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", "Times New Roman", Times, sans-serif;
+  }
+  
+  body {
+    background-color: var(--primary);
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  button {
+    background-color: #fff;
+  }
+  
+  /* base styles */
+  :root {
+    --primary: #f1f5f9;
+    --secondary: #334155;
+    --btnUnread: #94a3b8;
+    --btnRead:#7dd89e;
+  }
+  
+  header {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+    box-shadow: 1px 1px 1px 1px var(--primary);
+  }
+  header h1 {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  main {
+    height: 100%;
+    padding: 1em 0;
+    transition: height 0.4s ease-in-out;
+    -webkit-transition: height 0.4s ease-in-out;
+    -moz-transition: height 0.4s ease-in-out;
+  }
+  main .add-book-btn-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  main .add-book-btn-container button {
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  main .bookGrid {
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  main .focused {
+    box-shadow: 5px 2px 2px 9999px rgba(0, 0, 0, 0.6901960784);
+  }
+  
+  #book-form {
+    display: none;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    width: 85vw;
+  }
+  #book-form .form-input {
+    display: flex;
+    flex-flow: column;
+    background-color: var(--secondary);
+    height: 100%;
+    padding: 1em;
+    border-radius: 1em;
+    color: #fff;
+  }
+  #book-form .form-input .form-title {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #book-form .form-input .form-title h3 {
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+  #book-form .form-input .input-fields {
+    display: flex;
+    flex-flow: column;
+  }
+  #book-form .form-input .input-fields input {
+    border: 2px solid black;
+    border-radius: 0.5em;
+    padding: 10px;
+  }
+  #book-form .form-input .input-fields input:focus {
+    outline: none;
+  }
+  #book-form .form-input .form-checklist {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+  #book-form .form-input .form-checklist #readCheckbox {
+    height: 20px;
+    width: 20px;
+    outline: 1px solid black;
+    margin: 0 15px;
+  }
+  #book-form .form-input .form-checklist input:hover {
+    cursor: pointer;
+  }
+  #book-form .form-input .form-checklist label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0;
+  }
+  #book-form .form-input .btn-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  #book-form .form-input .btn-container .cancelBtn {
+    height: 2.5em;
+    font-size: 25px;
+    border: none;
+    border-radius: 0.5em;
+    width: 50%;
+    background-color: #ef4444;
+    margin-right: 1em;
+  }
+  #book-form .form-input .btn-container .submitBtn {
+    height: 2.5em;
+    font-size: 25px;
+    border: none;
+    border-radius: 0.5em;
+    width: 50%;
+    background-color: #4ade80;
+  }
+  
+  .bookCard {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0 20px;
+    border-radius: 1em;
+    background-color: var(--secondary);
+    color: #fff;
+  }
+  .bookCard h3, .bookCard p {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  .bookCard .card-btn-container {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+  }
+  .bookCard .card-btn-container .read {
+    height: 2.5em;
+    font-size: 18px;
+    border: none;
+    border-radius: 0.5em;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #4ade80;
+  }
+  .bookCard .card-btn-container .not-read {
+    height: 2.5em;
+    font-size: 18px;
+    border: none;
+    border-radius: 0.5em;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #ef4444;
+  }
+  .bookCard .card-btn-container .remove {
+    margin-top: 20px;
+    height: 2.5em;
+    font-size: 18px;
+    border: none;
+    border-radius: 0.5em;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #fff;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: var(--secondary);
+    font-weight: bold;
+    align-items: center;
+  }
+  .footer p {
+    margin: 0 1em;
+  }
+  
+  /* small tablet styles */
+  @media screen and (min-width: 620px) {
+    main .add-book-btn-container button {
+      font-size: 24px;
+    }
+    main .bookGrid {
+      display: grid;
+      padding: 0 5em;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    main .form-btn-container {
+      margin: 1em auto;
+      font-size: 25px;
+    }
+    main .form-btn-container button {
+      border: none;
+      border-radius: 1em;
+      height: 2em;
+      width: 8em;
+      font-weight: bold;
+    }
+    main #book-form {
+      top: 25%;
+      width: 65vw;
+    }
+  }
+  /* large tablet and laptops */
+  @media screen and (min-width: 960px) {
+    main .add-book-btn-container button {
+      font-size: 26px;
+    }
+    main .bookGrid {
+      display: grid;
+      padding: 0 5em;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    main #book-form {
+      top: 25%;
+      width: 40vw;
+    }
+  }
+  /* desktop styles */
+  @media screen and (min-width: 1200px) {
+    main .add-book-btn-container button {
+      font-size: 26px;
+    }
+    main .bookGrid {
+      display: grid;
+      padding: 0 10em;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    main #book-form {
+      top: 25%;
+      width: 25vw;
+    }
+  }
+  /* large desktop styles */
+  @media screen and (min-width: 1400px) {
+    main .bookGrid {
+      display: grid;
+      padding: 0 20em;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    main #book-form {
+      top: 25%;
+      width: 25vw;
+    }
+  }
+  
