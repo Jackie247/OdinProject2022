@@ -63,9 +63,7 @@ main{
         margin: 0 auto;
         button{
             border:none;
-            border-radius:1em;
-            height:2em;
-            width:8em;
+            font-size:20px;
             font-weight: bold;
         }    
     }
@@ -198,15 +196,20 @@ main{
 }
 /* small tablet styles */
 @media screen and (min-width:620px){
-    body{
-        display:grid;
-        grid-template-rows: 100px 1fr 75px;
-        grid-template-columns: 1fr;
-        min-height:100vh;
-        justify-content: space-between;
-    }
     main{
-        grid-template-rows: 100px 1fr;
+        .add-book-btn-container{
+            button{
+                font-size:24px;
+            }    
+        }
+        .bookGrid{
+            display:grid;
+            padding: 0 5em;
+            margin-top:20px;
+            margin-bottom:40px;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            gap:30px;
+        }
         .form-btn-container{
             margin: 1em auto;
             font-size:25px;
@@ -227,7 +230,19 @@ main{
 /* large tablet and laptops */
 @media screen and (min-width:960px){
     main{
-        grid-template-rows: 100px 1fr;
+        .add-book-btn-container{
+            button{
+                font-size:26px;
+            }    
+        }
+        .bookGrid{
+            display:grid;
+            padding: 0 5em;
+            margin-top:20px;
+            margin-bottom:40px;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            gap:30px;
+        }
         #book-form{
             top:25%;
             width:40vw;
@@ -237,7 +252,36 @@ main{
 /* desktop styles */
 @media screen and (min-width:1200px){
     main{
-        grid-template-rows: 100px 1fr;
+        .add-book-btn-container{
+            button{
+                font-size:26px;
+            }    
+        }
+        .bookGrid{
+            display:grid;
+            padding: 0 10em;
+            margin-top:20px;
+            margin-bottom:40px;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            gap:30px;
+        }
+        #book-form{
+            top:25%;
+            width:25vw;
+        }
+    }
+}
+/* large desktop styles */
+@media screen and (min-width:1400px){
+    main{
+        .bookGrid{
+            display:grid;
+            padding: 0 20em;
+            margin-top:40px;
+            margin-bottom:40px;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            gap:30px;
+        }
         #book-form{
             top:25%;
             width:25vw;
