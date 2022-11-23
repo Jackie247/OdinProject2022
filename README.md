@@ -4,6 +4,11 @@ Repo containing assignment projects from The Odin Project 2022 Syllabus.
 
 The following is a list of the repos for the projects created:
 
+- November - [To Do List](https://jackie247.github.io/to-do-list/)
+
+- October - [Restaurant-Page](https://jackie247.github.io/restaurant-page/)
+    * Using webpack to setup dev environment, utilizing JS modules and NPM to create a dynamic website which content is purely JS generated. 
+
 - October - [Tic-Tac-Toe](https://github.com/Jackie247/tic-tac-toe)
     * Using IIFEs and objects to create a tic tac toe game.
 
