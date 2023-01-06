@@ -3,6 +3,7 @@
 Repo containing assignment projects from The Odin Project 2022 Syllabus.
 
 The following is a list of the repos for the projects created:
+- December - [Weather-App](https://github.com/Jackie247/weather-app)
 
 - November - [To Do List](https://jackie247.github.io/to-do-list/)
 
